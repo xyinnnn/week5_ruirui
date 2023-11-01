@@ -15,7 +15,7 @@ def show_board(input_board):
 
 def other_player(player):
     """Given the character for a player, returns the other player."""
-    if turn == 'X':
+    if player == 'X':
         return 'O'
     return 'X'
 
@@ -34,8 +34,8 @@ def get_winner(input_board):
             print(winner, ' won.')
             return winner
 
-    if input_board[0][0] == input_board[1][1] and input_board[1][1] == input_board[2][2]:
-        winner = input_board
+    if (input_board[0][0] == input_board[1][1] and input_board[1][1] == input_board[2][2]) or (input_board[0][2] == input_board[1][1] and input_board[1][1] == input_board[2][0]):
+        winner = input_board[1][1]
 
     if winner != None:
         print(winner, ' won.')
